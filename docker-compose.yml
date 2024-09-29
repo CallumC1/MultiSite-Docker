@@ -57,6 +57,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/certs:/etc/nginx/certs  # for prod only
     ports:
       - "80:80"
       - "443:443"
