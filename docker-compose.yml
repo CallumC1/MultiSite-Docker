@@ -5,8 +5,8 @@ services:
     build:
       context: ./YourPet
       dockerfile: dockerfile
-    ports:
-      - "8082:80"
+    # ports:
+    #   - "8082:80"
     volumes:
       - ./YourPet/public:/var/www/html/public
       - ./YourPet/app:/var/www/html/app
@@ -41,17 +41,16 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     environment:
-      - PMA_HOST=db
+      - PMA_HOST=yourpet-db
       - PMA_PORT=3306
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    ports:
-      - 8083:80
+    # ports:
+    #   - 8083:80
     depends_on:
       - yourpet-db
       
 
   nginx:
-    image: nginx:latest
     build:
       context: ./nginx
     ports:
