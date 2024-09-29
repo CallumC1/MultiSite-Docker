@@ -9,7 +9,7 @@ services:
     #   - "8082:80"
     volumes:
       - ./YourPet/public:/var/www/html/public
-      - ./YourPet/App:/var/www/html/app
+      - ./YourPet/App:/var/www/html/App
       - ./YourPet/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
       - ./YourPet/composer.json:/var/www/html/composer.json
     depends_on:
